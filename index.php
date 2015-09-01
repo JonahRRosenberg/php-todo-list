@@ -1,3 +1,10 @@
+<?php
+
+require_once('app/init.php');
+require_once('app/load_tasks.php');
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,12 +20,15 @@
     <h1>TODO</h1>
 
     <ul>
-        <li>First item</li>
-        <li>Second item</li>
+        <?php foreach ($tasks as $task): ?>
+            <li <?php echo ($task['is_complete'] ? ' class="done"' : '') ?> >
+                <?php echo $task['description'] ?>
+            </li>
+        <?php endforeach; ?>
     </ul>
 
     <form>
-        <input type="text" placeholder="What do you have to do?"></input>
+        <input type="text" placeholder="What do you have to do?">
     </form>
 </body>
 
