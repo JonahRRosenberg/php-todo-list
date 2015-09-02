@@ -1,7 +1,7 @@
 <?php
 
 require_once('app/init.php');
-require_once('app/load_tasks.php');
+require_once('load_tasks.php');
 
 $strToDate = function($date) {
     return date('D M j, Y', strtotime($date));
