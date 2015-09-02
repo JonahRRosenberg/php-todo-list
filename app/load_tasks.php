@@ -1,7 +1,7 @@
 <?php
 
 $tasksQuery = $db->prepare("
-    SELECT description, due_date, is_complete
+    SELECT ID, description, due_date, is_complete
     FROM tasks
     WHERE user_id = :user
 ");
